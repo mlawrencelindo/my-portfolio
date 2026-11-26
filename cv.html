@@ -1,0 +1,112 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Mark Lindo | CV</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap">
+<style>
+  @page { size: Letter; margin: 0; }
+  * { box-sizing: border-box; }
+  html, body { margin: 0; }
+  body {
+    font-family: "Inter", system-ui, sans-serif; color: #0F1A3A; background: #FFFFFF;
+    font-size: 10.5pt; line-height: 1.45; -webkit-print-color-adjust: exact; print-color-adjust: exact;
+  }
+  .page { width: 8.5in; min-height: 11in; padding: 0.6in 0.65in; }
+  h1, h2, h3, p, ul, dl, dd { margin: 0; }
+  ul { padding: 0; list-style: none; }
+  a { color: #2F5BEA; text-decoration: none; }
+
+  header { display: grid; grid-template-columns: 1fr auto; gap: 24px; align-items: end; padding-bottom: 16px; border-bottom: 2px solid #0F1A3A; }
+  .who { display: flex; align-items: center; gap: 14px; }
+  .who img { width: 36px; height: 36px; }
+  h1 { font-size: 28pt; font-weight: 800; letter-spacing: -0.03em; line-height: 1; }
+  .title { font-size: 9pt; font-weight: 600; letter-spacing: 0.16em; text-transform: uppercase; color: #B8461F; margin-top: 8px; }
+  .contact { text-align: right; font-size: 9.5pt; line-height: 1.6; }
+  .contact span { color: #5B6380; }
+
+  .intro { font-size: 11pt; color: #3A4566; margin-top: 14px; }
+
+  h2 { font-size: 8.5pt; font-weight: 700; letter-spacing: 0.16em; text-transform: uppercase; color: #0F1A3A; margin: 20px 0 8px; padding-bottom: 4px; border-bottom: 1px solid #D9D2C3; }
+
+  .skills { display: flex; flex-wrap: wrap; gap: 6px; }
+  .skills li { border: 1px solid #D9D2C3; border-radius: 6px; padding: 3px 9px; font-size: 9.5pt; font-weight: 500; }
+
+  .proj { margin-top: 12px; }
+  .proj:first-of-type { margin-top: 0; }
+  .proj-head { display: flex; justify-content: space-between; gap: 16px; align-items: baseline; }
+  h3 { font-size: 11pt; font-weight: 700; letter-spacing: -0.01em; }
+  .stack { font-size: 8.5pt; font-weight: 500; color: #5B6380; white-space: nowrap; }
+  .proj p { margin-top: 3px; }
+  .proj .proof { color: #3A4566; }
+  .proj a { font-size: 9.5pt; font-weight: 600; }
+
+  .note { font-size: 8.5pt; color: #5B6380; margin-top: 10px; }
+
+  .rates { display: grid; grid-template-columns: repeat(4, 1fr); gap: 8px; }
+  .rates div { background: #F3EFE6; border-radius: 6px; padding: 8px 10px; }
+  .rates dt { font-size: 8pt; font-weight: 500; color: #5B6380; }
+  .rates dd { font-size: 10.5pt; font-weight: 700; margin-top: 2px; }
+
+  @media screen { body { background: #EAE5D9; } .page { margin: 24px auto; background: #FFFFFF; } }
+</style>
+</head>
+<body>
+<div class="page">
+  <header>
+    <div>
+      <div class="who">
+        <img src="assets/aziel-symbol.svg" alt="" width="36" height="36">
+        <h1>Mark Lindo</h1>
+      </div>
+      <p class="title">AI and CRM automation</p>
+    </div>
+    <p class="contact">
+      <a href="mailto:aziel.corporation@gmail.com">aziel.corporation@gmail.com</a><br>
+      <a href="https://github.com/mlawrencelindo">github.com/mlawrencelindo</a><br>
+      <a href="https://mlawrencelindo.github.io/myPortfolio/">mlawrencelindo.github.io/myPortfolio</a><br>
+      <span>Philippines, GMT+8</span>
+    </p>
+  </header>
+
+  <p class="intro">I build Make, n8n, and AI automations for small businesses: lead sorting, invoice follow-ups, and reports. Every build runs on test data first, logs every failed run, and drafts before it sends.</p>
+
+  <h2>Skills</h2>
+  <ul class="skills">
+    <li>Make</li><li>n8n</li><li>Klaviyo</li><li>Google Workspace</li><li>Stripe API</li><li>Webhooks</li><li>JavaScript basics</li><li>Claude</li>
+  </ul>
+
+  <h2>Personal projects (demo businesses are made up)</h2>
+
+  <div class="proj">
+    <div class="proj-head"><h3>Unpaid invoice chaser</h3><span class="stack">n8n, Stripe API and webhooks, Node</span></div>
+    <p>Four n8n workflows: reminders at 3, 7, 14, and 30 days overdue, a paid listener that stops them, a Monday cash report, and an error alert with a link to the failed run.</p>
+    <p class="proof">One email per invoice per day, signature-checked webhook. 40 unit tests and 8 of 8 end-to-end cases pass. <a href="https://github.com/mlawrencelindo/n8n-invoice-chaser">GitHub repo</a></p>
+  </div>
+
+  <div class="proj">
+    <div class="proj-head"><h3>AI lead triage</h3><span class="stack">Make, Make AI, Sheets, Gmail, Calendar</span></div>
+    <p>A Make scenario that sorts each website lead as hot, warm, or spam with a one-line reason, logs it to a sheet, writes a Gmail draft, and books a follow-up for hot leads.</p>
+    <p class="proof">4 of 4 test leads sorted right, about 6 seconds per lead. Replies stay as drafts. A failed step logs the lead and retries 3 times, 15 minutes apart; 3 of 3 forced faults caught.</p>
+  </div>
+
+  <div class="proj">
+    <div class="proj-head"><h3>AI agent content pipeline</h3><span class="stack">Claude, Google Calendar, checklists</span></div>
+    <p>An agent that finds and vets paid video campaigns, builds and checks each clip, schedules posts with calendar reminders, and logs results. It stops for sign-ins, sends, and payouts.</p>
+    <p class="proof">Since 2026-10-15: 64 posts scheduled, 31 research files, 14 clip batches. About 10 hours a week saved (estimate).</p>
+  </div>
+
+  <h2>Rates and availability</h2>
+  <dl class="rates">
+    <div><dt>Hourly</dt><dd>$30</dd></div>
+    <div><dt>Fixed builds</dt><dd>$150, $350, $650</dd></div>
+    <div><dt>Hours</dt><dd>About 18 a week, async</dd></div>
+    <div><dt>Live calls</dt><dd>8 to 10 AM US Eastern</dd></div>
+  </dl>
+
+  <p class="note">Full write-ups, screenshots, and workflow files: mlawrencelindo.github.io/myPortfolio</p>
+</div>
+</body>
+</html>
